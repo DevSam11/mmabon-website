@@ -4,13 +4,13 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 // --- Landing Page Components ---
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import CtaBanner from './components/CtaBanner';
-import FilterOptions from './components/FilterOptions';
-import SectionHeader from './components/SectionHeader';
-import ImageGallery from './components/ImageGallery';
-import Footer from './components/Footer'; // Import the Footer component
+import Header from './Components/Header';
+import HeroSection from './Components/HeroSection';
+import CtaBanner from './Components/CtaBanner';
+import FilterOptions from './Components/FilterOptions';
+import SectionHeader from './Components/SectionHeader';
+import ImageGallery from './Components/ImageGallery';
+import Footer from './Components/Footer'; // Import the Footer component
 
 // --- Page Components ---
 import DesignerPage from './pages/DesignerPage';
