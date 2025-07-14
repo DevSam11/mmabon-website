@@ -5,7 +5,7 @@ import { useCallback } from 'react'; // Import useCallback for memoization
 const Footer = () => {
   // Function to handle "WhatsApp to Order" from the footer
   const handleWhatsappOrder = useCallback(() => {
-    const phoneNumber = '2348012345678'; // Use your correct WhatsApp number
+    const phoneNumber = '2348037247378'; // Use your correct WhatsApp number
     const message = encodeURIComponent("Hello, I'd like to make an inquiry from the website footer.");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');

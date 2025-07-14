@@ -6,7 +6,7 @@ import Footer from '../Components/Footer';
 const ContactUsPage = () => {
   // Function to handle "Chat to Order" for general inquiries on the Contact Us page
   const handleChatOrder = useCallback(() => {
-    const phoneNumber = '2348012345678'; // Use your correct WhatsApp number
+    const phoneNumber = '2348037247378'; // Use your correct WhatsApp number
     const message = encodeURIComponent("Hello, I have an inquiry from the Contact Us page. How can I help you?");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
