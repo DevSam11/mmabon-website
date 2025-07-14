@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCallback } from 'react'; // Import useCallback for memoization
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
 const ContactUsPage = () => {
   // Function to handle "Chat to Order" for general inquiries on the Contact Us page

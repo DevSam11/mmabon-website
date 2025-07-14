@@ -1,9 +1,9 @@
 // src/pages/AlumniPage.jsx
 
 import React from 'react';
-import Header from '../components/Header'; // Import Header for consistent layout
-import Footer from '../components/Footer'; // Import Footer for consistent layout
-import ImageGallery from '../components/ImageGallery'; // Import ImageGallery to display products
+import Header from '../Components/Header'; // Import Header for consistent layout
+import Footer from '../Components/Footer'; // Import Footer for consistent layout
+import ImageGallery from '../Components/ImageGallery'; // Import ImageGallery to display products
 
 // AlumniPage will now accept props for the products and the chat order handler
 function AlumniPage({ alumniProducts, onChatOrder }) {
