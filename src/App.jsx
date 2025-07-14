@@ -153,7 +153,7 @@ function App() {
 
   // Memoize handleChatOrder to prevent its reference from changing on every render
   const handleChatOrder = useCallback((product) => {
-    const phoneNumber = '2348012345678'; // Ensure this is your correct WhatsApp number
+    const phoneNumber = '2348037247378'; // Ensure this is your correct WhatsApp number
     const message = encodeURIComponent(`Hello, I'd like to inquire about ordering: ${product.altText} (Product ID: ${product.id}).`);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
