@@ -1,0 +1,149 @@
+/* src/components/HeroSection.css */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Base height for larger screens */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content block horizontally */
+    color: white;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+/* Optional: Add a dark overlay to make text more readable */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px; /* Adjusted: Increased max-width to allow more space for centered text */
+    text-align: center; /* Ensures headline and other text are CENTER-ALIGNED */
+    margin-left: unset;
+}
+
+.hero-content h2 {
+    font-size: 3.5em; /* Large, bold headline (base size) */
+    margin-bottom: 30px;
+    line-height: 1.2;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px; /* Slightly increased gap for better separation */
+    flex-wrap: wrap;
+    justify-content: center; /* Align buttons to the CENTER within hero-content */
+}
+
+/* --- Common Styling for Both Buttons --- */
+.whatsapp-order-btn,
+.customize-outfit-btn {
+    padding: 15px 30px;
+    font-size: 1.1em; /* Base font size for buttons on larger screens */
+    font-weight: bold;
+    border: none; /* Remove default button border */
+    border-radius: 50px; /* Apply pill shape to both */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    text-decoration: none; /* For Link component */
+    display: inline-flex; /* For consistent padding and centering text */
+    align-items: center;
+    justify-content: center;
+    text-transform: none; /* Normal text casing (not uppercase) */
+    letter-spacing: normal; /* Normal letter spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Consistent subtle shadow */
+}
+
+.whatsapp-order-btn:hover,
+.customize-outfit-btn:hover {
+    transform: translateY(-2px); /* Consistent lift on hover */
+}
+/* --- End Common Styling --- */
+
+
+/* --- Specific Color Styling for Each Button --- */
+.whatsapp-order-btn {
+    background-color: #CC3F3F; /* WhatsApp green */
+    color: #fff; /* White text */
+}
+
+.whatsapp-order-btn:hover {
+    background-color: #1DA851; /* Darker green on hover */
+}
+
+.customize-outfit-btn {
+    background-color: white; /* MMABON's brand yellow */
+    color: BLACK; /* White text */
+    border: 2px solid white; /* Matching border */
+}
+
+.customize-outfit-btn:hover {
+    background-color: #CC3F3F; /* Darker yellow on hover */
+    border-color: #CC3F3F; /* Darker border on hover */
+    color: white
+  }
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 380px;
+        padding: 0 20px;
+    }
+
+    .hero-content {
+        max-width: 90%;
+    }
+
+    .hero-content h2 {
+        font-size: 2.2em; /* Adjusted for better fit on tablets */
+        margin-bottom: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .whatsapp-order-btn,
+    .customize-outfit-btn {
+        width: 80%; /* Make buttons wider when stacked */
+        max-width: 300px; /* Limit their max width */
+        margin: 0 auto; /* Center them */
+        padding: 12px 20px; /* Adjusted padding for smaller screens */
+        font-size: 1em; /* Adjusted font size for smaller screens */
+    }
+}
+
+/* Even smaller screens (e.g., typical smartphones) */
+@media (max-width: 480px) {
+    .hero-section {
+        height: 320px;
+        padding: 0 15px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8em; /* Further adjust for very small screens */
+        margin-bottom: 12px;
+    }
+
+    .whatsapp-order-btn,
+    .customize-outfit-btn {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+}

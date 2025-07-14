@@ -1,0 +1,228 @@
+/* src/components/Header.css */
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Left section: Logo and (for mobile) Hamburger icon */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-header .logo a {
+  font-family: 'Georgia', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333333;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Center section: Main Navigation (Desktop) */
+.main-nav {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.main-nav li a {
+  text-decoration: none;
+  color: #555555;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.main-nav li a:hover {
+  color: #007bff;
+}
+
+/* Right section: Shop Now button and Search Icon */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.shop-now-button {
+  background-color: #e6b800;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.shop-now-button:hover {
+  background-color: #cca300;
+}
+
+.search-icon {
+  font-size: 20px;
+  color: #555555;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.search-icon:hover {
+  color: #007bff;
+}
+
+
+/* Hamburger Icon Styling */
+.menu-icon {
+  display: none; /* Hidden by default on desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001; /* Ensure hamburger is above mobile menu when open */
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease; /* Smooth transition for animation */
+}
+
+/* Hamburger X animation */
+.menu-icon.active .hamburger-line:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.menu-icon.active .hamburger-line:nth-child(2) {
+  opacity: 0; /* Hide middle line */
+}
+
+.menu-icon.active .hamburger-line:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+
+/* --- Media Queries for Responsiveness --- */
+
+@media (max-width: 992px) {
+  .main-header {
+    padding: 15px 25px;
+  }
+  .main-nav ul {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    justify-content: space-between;
+  }
+
+  .header-left {
+    order: 1; /* Ensure hamburger and logo stay left */
+  }
+
+  .header-right {
+    order: 2; /* Ensure button and search stay right */
+  }
+
+  /* Show the hamburger menu icon */
+  .menu-icon {
+    display: flex; /* Make hamburger icon visible */
+    /* No need for 'order: 0' here as header-left is order:1 now */
+  }
+
+  /* Hide main navigation (desktop view) */
+  .main-nav {
+    display: none; /* Hidden by default for mobile */
+    flex-direction: column;
+    width: 100%;
+    order: 3; /* Push it below the logo/icons row */
+    text-align: left;
+    position: absolute; /* Position relative to viewport */
+    top: 60px; /* Adjust based on header height (approx) */
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    height: calc(100vh - 60px); /* Take up remaining viewport height */
+    overflow-y: auto; /* Enable scrolling if menu content is long */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    transition: transform 0.3s ease-out; /* Smooth slide-in/out */
+  }
+
+  /* Style for when the mobile menu is active/open */
+  .main-nav.active {
+    display: flex; /* Show the mobile menu when active */
+    transform: translateX(0); /* Slide into view */
+  }
+
+  .main-nav.active ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    padding: 0 15px;
+    gap: 15px;
+  }
+
+  .main-nav.active li {
+    width: 100%;
+  }
+
+  .main-nav.active li a {
+    padding: 10px 0;
+    display: block;
+    font-size: 18px;
+  }
+
+  /* Adjust logo size for smaller screens */
+  .main-header .logo a {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 10px 10px;
+  }
+  .main-header .logo a {
+    font-size: 20px;
+  }
+  .header-right {
+    gap: 10px;
+  }
+}

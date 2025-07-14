@@ -1,0 +1,50 @@
+/* src/components/SectionHeader.css */
+
+.section-header-container {
+    display: flex;
+    justify-content: space-between; /* Pushes title to left, subtitle to right */
+    align-items: center;
+    max-width: 1000px; /* Match max-width of other sections */
+    margin: 40px auto 20px auto; /* Margin above and below, center */
+    padding: 0 20px; /* Padding for edges */
+  }
+  
+  .section-title {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1em;
+    color: #E24949; /* Matching brand color */
+    font-weight: 600;
+    cursor: pointer; /* Indicates it's clickable */
+  }
+  
+  .section-subtitle:hover {
+      text-decoration: underline;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .section-header-container {
+      flex-direction: column; /* Stack on smaller screens */
+      align-items: flex-start; /* Align stacked items to the left */
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    .section-title {
+      font-size: 1.8em;
+      margin-bottom: 5px; /* Space between title and subtitle when stacked */
+    }
+    .section-subtitle {
+      font-size: 1em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.5em;
+    }
+  }

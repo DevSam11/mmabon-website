@@ -1,0 +1,84 @@
+/* src/components/ImageGallery.css */
+
+.image-gallery-section {
+    padding: 0 20px 40px 20px; /* Padding for the section */
+    max-width: 1000px; /* Match max-width of other sections */
+    margin: 0 auto; /* Center the section */
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive 3-column like layout */
+    gap: 20px; /* Space between grid items */
+  }
+  
+  .gallery-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image corners respect border-radius */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column; /* Stack image and button */
+    justify-content: space-between; /* Push button to bottom */
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 250px; /* Fixed height for consistency, adjust as needed */
+    object-fit: cover; /* Cover the area without distorting aspect ratio */
+    display: block; /* Remove extra space below image */
+  }
+  
+  .chat-order-btn {
+    width: calc(100% - 20px); /* Full width minus padding */
+    margin: 10px; /* Space around the button inside the item */
+    padding: 12px 15px;
+    background-color: #E24949; /* Brand red color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-align: center;
+  }
+  
+  .chat-order-btn:hover {
+    background-color: #CC3F3F;
+    transform: translateY(-1px);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust columns for tablets */
+      gap: 15px;
+    }
+    .gallery-item img {
+      height: 220px; /* Adjust image height for tablets */
+    }
+    .chat-order-btn {
+      font-size: 0.9em;
+      padding: 10px 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .image-gallery-section {
+      padding: 0 15px 30px 15px;
+    }
+    .gallery-grid {
+      grid-template-columns: 1fr; /* Stack images on very small screens */
+      gap: 15px;
+    }
+    .gallery-item img {
+      height: 200px; /* Adjust image height for mobile */
+    }
+    .chat-order-btn {
+      font-size: 0.85em;
+      padding: 8px 10px;
+    }
+  }

@@ -1,0 +1,56 @@
+/* src/index.css */
+
+/* Basic Reset */
+body {
+  margin: 0;
+  font-family: sans-serif; /* You might want a specific font from your design */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8; /* Light background */
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures footer sticks to bottom */
+}
+
+/* Main Content Styling */
+.main-content {
+  flex-grow: 1; /* Makes content area fill available space */
+  /* Padding will vary per page, but general vertical padding is good */
+  padding: 0px 20px; /* Adjust as needed, the design looks edge-to-edge for hero */
+  text-align: center;
+}
+
+/* Footer Styling (keep as is for now) */
+.main-footer {
+  background-color: #222;
+  color: #bbb;
+  padding: 20px 30px;
+  text-align: center;
+  font-size: 0.9em;
+  border-top: 1px solid #444;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.social-media a {
+    color: #bbb;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.social-media a:hover {
+    color: white;
+}

@@ -1,0 +1,27 @@
+/* src/components/CtaBanner.css */
+
+.cta-banner {
+    background-color: #F8B1A8; /* A reddish-pink color similar to the design */
+    color: white;
+    text-align: center;
+    padding: 20px 30px; /* Adjust padding as needed */
+    font-size: 1.6em; /* Large font size for impact */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px; /* Add some space below the banner before the next section */
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .cta-banner {
+      font-size: 1.2em; /* Smaller font on mobile */
+      padding: 15px 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cta-banner {
+      font-size: 1em; /* Even smaller font on very small screens */
+      padding: 10px 15px;
+    }
+  }
