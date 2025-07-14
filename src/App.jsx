@@ -13,11 +13,11 @@ import ImageGallery from './Components/ImageGallery';
 import Footer from './Components/Footer'; // Import the Footer component
 
 // --- Page Components ---
-import DesignerPage from './pages/DesignerPage';
-import AlumniPage from './pages/AlumniPage';
-import HowToOrderPage from './pages/HowToOrderPage';
-import AboutUsPage from './pages/AboutUsPage';
-import ContactUsPage from './pages/ContactUsPage';
+import DesignerPage from './Pages/DesignerPage';
+import AlumniPage from './Pages/AlumniPage';
+import HowToOrderPage from './Pages/HowToOrderPage';
+import AboutUsPage from './Pages/AboutUsPage';
+import ContactUsPage from './Pages/ContactUsPage';
 
 
 // Move allProductData OUTSIDE the App component to ensure its reference never changes
