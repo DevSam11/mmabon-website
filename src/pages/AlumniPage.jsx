@@ -199,7 +199,7 @@ const App = () => {
   // Handler for the "Chat to Order" button.
   const onChatOrder = (item) => {
     // You can replace '234XXXXXXXXXX' with your actual WhatsApp phone number
-    const phoneNumber = '234837247378';
+    const phoneNumber = '2348037247378';
     // Create a pre-filled message with product details
     const message = `Hello, I would like to order the ${item.name} for ${item.school}, Class of ${item.year}.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

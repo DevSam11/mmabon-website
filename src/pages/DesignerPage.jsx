@@ -34,7 +34,7 @@ const App = () => {
     }
 
     // You can replace '234XXXXXXXXXX' with your actual WhatsApp phone number
-    const phoneNumber = '2349012345678';
+    const phoneNumber = '2348037247378';
     
     // Construct the base message with the selected product
     const baseMessage = `Hello, I would like to place a custom order for a ${designDetails.product}.`;
@@ -62,7 +62,7 @@ const App = () => {
         {/* Header Section */}
         <div className="text-center space-y-2">
           <h1 className="text-4xl md:text-5xl font-bold">Design Your Own</h1>
-          <p className="text-slate-400">Create custom merchandise for your alumni class.</p>
+          <p className="text-slate-400">Create your custom merchandise.</p>
         </div>
         
         {/* Main Customization Form */}
