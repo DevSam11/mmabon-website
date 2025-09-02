@@ -49,7 +49,7 @@ const Header = ({ onMenuClick }) => { // onMenuClick prop for hamburger
           </li>
 
           {/* Other Top-Level Links */}
-          <li className="header-nav-item"><Link to="/customize-outfit" className="header-nav-link">CUSTOMIZE YOUR OUTFIT</Link></li>
+          <li className="header-nav-item"><Link to="/customize-outfit" className="header-nav-link"></Link></li>
           <li className="header-nav-item"><Link to="/alumni" className="header-nav-link">ALUMNI</Link></li>
            <li className="header-nav-item"><Link to="/how-to-order" className="header-nav-link">HOW TO ORDER</Link></li>
          
