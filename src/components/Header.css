@@ -140,22 +140,21 @@
     }
 
     /* Adjust logo positioning for mobile if needed */
-    .header-left-section {
+     .header-left-section {
         display: flex;
         align-items: center;
-        gap: 40px; /* Space between hamburger and logo */
-        flex: 1; /* Allow it to grow within header */
+        justify-content: space-between; /* pushes items to edges */
+        width: 100%;
+        padding: 0 20px; /* add some padding from screen edges */
     }
-   .header-logo-link {
-    display: flex;
-    align-items: center; /* vertically center */
-    padding-left: 0; /* Remove the 260px padding */
-}
+     .header-logo-link {
+        display: flex;
+        align-items: center;
+    }
 
-.header-logo {
-    height: 150px; /* Set a fixed height for the logo */
-    width: auto;   /* Maintain the aspect ratio */
-    display: block; /* Ensures no extra space below the image */
-}
+ .header-logo {
+        max-width: 150px;
+        height: auto;
+    }
 
 }
