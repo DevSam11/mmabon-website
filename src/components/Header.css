@@ -144,12 +144,12 @@
         display: flex;
         align-items: center;
         gap: 10px; /* Space between hamburger and logo */
+        flex: 1; /* Allow it to grow within header */
     }
-
-    .header-logo-link {
-    display: flex; /* Ensures the link itself behaves as a flex item */
-    align-items: left ; /* Vertically centers the logo within its link */
-    padding-left: 260px; /* Add some space if hamburger is present */
+   .header-logo-link {
+    display: flex;
+    align-items: center; /* vertically center */
+    padding-left: 0; /* Remove the 260px padding */
 }
 
 .header-logo {
