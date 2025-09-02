@@ -1,0 +1,157 @@
+/* src/components/Footer.css */
+
+.footer {
+  background-color: #2c3e50; /* A deep, professional blue-gray */
+  color: #ecf0f1; /* Off-white for good contrast */
+  padding: 40px 20px;
+  font-family: 'Open Sans', sans-serif; /* Consistent font with other sections */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-top: 60px; /* Provides space between the main content and the footer */
+  width: 100%; /* Ensure it spans the full width */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap; /* Allows sections to wrap to the next line on smaller screens */
+  justify-content: space-around; /* Distributes space evenly around items */
+  max-width: 1200px; /* Max width for the content for better readability on large screens */
+  margin: 0 auto; /* Centers the content */
+}
+
+.footer-section {
+  flex: 1; /* Allows sections to grow and shrink */
+  min-width: 200px; /* Minimum width before wrapping */
+  margin: 20px; /* Spacing around each section */
+}
+
+.footer-section h3 {
+  color: #ecf0f1; /* Heading color */
+  font-size: 1.4em; /* Larger font for headings */
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px; /* Space for the underline effect */
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px; /* Length of the accent underline */
+  height: 3px; /* Thickness of the accent underline */
+  background-color: #4a90e2; /* A vibrant blue accent color */
+}
+
+.footer-section p {
+  font-size: 0.95em;
+  line-height: 1.6; /* Improved readability for paragraphs */
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none; /* Removes default bullet points */
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px; /* Space between list items */
+}
+
+.footer-section ul li a {
+  color: #ecf0f1; /* Link color */
+  text-decoration: none; /* No underline by default */
+  font-size: 0.95em;
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer-section ul li a:hover {
+  color: #4a90e2; /* Accent color on hover */
+  text-decoration: underline; /* Underline on hover for better UX */
+}
+
+/* Social Links specific styling */
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  color: #ecf0f1;
+  font-size: 1.5em; /* Larger icons */
+  margin-right: 15px; /* Space between icons */
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #4a90e2; /* Accent color on hover */
+}
+
+/* Contact Info specific styling */
+.footer-contact-info p {
+  display: flex; /* Aligns icon and text horizontally */
+  align-items: center; /* Vertically centers icon and text */
+  gap: 10px; /* Space between icon and text */
+  margin-bottom: 10px;
+}
+
+.footer-contact-info p i {
+  font-size: 1.1em;
+  color: #4a90e2; /* Accent color for icons */
+}
+
+.footer-contact-info a {
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact-info a:hover {
+  color: #4a90e2;
+}
+
+/* Bottom section with copyright */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(236, 240, 241, 0.1); /* Subtle line above copyright */
+  font-size: 0.9em;
+  color: rgba(236, 240, 241, 0.7); /* Lighter text for copyright */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stacks sections vertically */
+    align-items: center; /* Centers items when stacked */
+  }
+
+  .footer-section {
+    margin: 15px 0; /* Adjust vertical margin */
+    text-align: center; /* Center text in stacked sections */
+  }
+
+  .footer-section h3::after {
+    left: 50%; /* Center the underline */
+    transform: translateX(-50%); /* Adjust for accurate centering */
+  }
+
+  .footer-section ul {
+    text-align: center; /* Center links in stacked lists */
+  }
+
+  .footer-contact-info p {
+    justify-content: center; /* Center contact info items */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 15px; /* Reduce padding on very small screens */
+  }
+
+  .footer-section {
+    min-width: unset; /* Allow sections to shrink more */
+    width: 100%; /* Full width */
+  }
+}

@@ -1,0 +1,48 @@
+/* src/App.css */
+
+/* Global styles for HTML and Body for proper layout and overflow */
+html, body, #root { /* Ensure #root is included if your app mounts there */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Crucial: Prevents horizontal scrollbar when side nav shifts */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Basic layout for the overall app container */
+.app-container {
+    display: flex; /* Makes the app container a flexbox */
+    position: relative; /* Needed for positioning context of fixed side nav */
+    min-height: 100vh; /* Ensure it takes full height */
+    /* Remove overflow: hidden from here as html/body handles it */
+}
+
+/* Style for the main content wrapper that shifts */
+.main-content-wrapper {
+    flex-grow: 1; /* Allows it to take up remaining space */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for shifting */
+    background-color: #fff; /* Ensure it has a background to cover if needed */
+    z-index: 1; /* Make sure it's below the side nav overlay */
+    position: relative; /* Establish stacking context */
+    display: flex; /* Ensure its children (routes) layout correctly */
+    flex-direction: column;
+    width: 100%; /* Important for initial layout */
+    min-height: 100vh; /* Ensure it takes full viewport height */
+}
+
+/* Class applied when side navigation is open (on mobile) */
+.main-content-wrapper.shifted {
+    transform: translateX(300px); /* This value should match SideNavigation's width */
+}
+
+/* Basic styling for main content area to give it structure */
+.main-content {
+  flex-grow: 1; /* Allows main content to expand and push footer down */
+  padding-bottom: 50px; /* Example padding to prevent content touching footer */
+}

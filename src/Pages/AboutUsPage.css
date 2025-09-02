@@ -1,0 +1,200 @@
+/* src/pages/AboutUsPage.css */
+
+.about-us-content {
+  max-width: 960px; /* Slightly wider for better content flow */
+  margin: 60px auto; /* More vertical space */
+  padding: 0 25px; /* More horizontal padding */
+  line-height: 1.7; /* Increased line height for readability */
+  color: #333; /* Darker text for contrast */
+  font-family: 'Open Sans', sans-serif; /* Example: Use a pleasant font */
+}
+
+/* Base styling for all sections */
+.about-section {
+  margin-bottom: 40px; /* More space between sections */
+  background-color: #ffffff; /* White background for clean look */
+  padding: 30px; /* Increased padding */
+  border-radius: 10px; /* Softer rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* More pronounced, softer shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.about-section:hover {
+  transform: translateY(-5px); /* Subtle lift effect on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Slightly larger shadow on hover */
+}
+
+.about-section h2 {
+  color: #2c3e50; /* Darker blue for headings */
+  font-size: 2.2em; /* Larger main headings */
+  margin-bottom: 20px;
+  border-bottom: 3px solid #f0f0f0; /* Lighter, thicker bottom border */
+  padding-bottom: 15px;
+  text-align: center; /* Center align section titles */
+  font-weight: 700; /* Bolder font weight */
+}
+
+.about-section h3 {
+  color: #34495e; /* Slightly lighter blue for subheadings */
+  font-size: 1.7em; /* Larger subheadings */
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: 600; /* Semi-bold font weight */
+}
+
+.about-section p {
+  margin-bottom: 18px; /* More space below paragraphs */
+  font-size: 1.15em; /* Slightly larger paragraph text */
+  text-align: justify; /* Justify text for a clean block look */
+}
+
+/* Styling for lists - default to disc */
+.about-section ul {
+  list-style-type: disc; /* Explicitly set to default disc bullets */
+  margin-left: 25px; /* Indent lists */
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.about-section ul li {
+  margin-bottom: 10px; /* Space between list items */
+  font-size: 1.1em; /* Consistent font size for list items */
+  color: #555; /* Slightly lighter color for list items */
+}
+
+/* Specific styling for the 'What We Offer' section lists, making them stand out subtly */
+.offer-section ul {
+    list-style-type: none; /* Remove default bullets for this section */
+    padding: 0;
+}
+
+.offer-section ul li {
+    background-color: #f8f8f8; /* Light background for offer items */
+    border-left: 4px solid #4a90e2; /* Blue accent border */
+    padding: 12px 20px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #333;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.offer-section ul li:hover {
+    background-color: #e6f2ff; /* Lighter blue on hover */
+    border-color: #2e7ad8; /* Darker blue on hover */
+}
+
+/* Specific styling for the 'Our Approach' section lists - REMOVES BULLETS */
+.approach-section ul {
+    list-style-type: none; /* NO BULLETS FOR THIS SECTION */
+    margin-left: 0; /* Remove default indentation for bullets */
+    padding-left: 0; /* Remove default padding for bullets */
+}
+
+.approach-section ul li {
+    background-color: #fcfcfc; /* Slightly different background */
+    border-bottom: 1px dashed #eee; /* Subtle dashed line separator */
+    padding: 10px 0; /* Adjust padding for a cleaner look without bullets */
+    margin-bottom: 5px; /* Less space between items in this list */
+    color: #444;
+}
+
+.approach-section ul li:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+
+/* Styles for the "Our Core Values" section, if you want them to be visually distinct */
+.values-section ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+    display: grid; /* Use grid for a modern layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 15px; /* Space between grid items */
+}
+
+.values-section ul li {
+    background-color: #f0f8ff; /* Very light blue background */
+    border: 1px solid #d4e3f4; /* Subtle border */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #4a4a4a;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.values-section ul li:hover {
+    background-color: #e0f0ff; /* Slightly darker blue on hover */
+    border-color: #b0d8ff;
+}
+
+.values-section ul li strong {
+    display: block; /* Make the strong tag a block for better spacing */
+    margin-bottom: 5px;
+    color: #2c3e50; /* Darker color for the value name */
+    font-size: 1.2em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .about-us-content {
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .about-section h2 {
+    font-size: 2em;
+  }
+  .about-section h3 {
+    font-size: 1.6em;
+  }
+  .about-section p {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us-content {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+  .about-section {
+    padding: 25px;
+    margin-bottom: 30px;
+  }
+  .about-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+  .about-section h3 {
+    font-size: 1.4em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .about-section p,
+  .about-section ul li {
+    font-size: 1em;
+  }
+  .values-section ul {
+      grid-template-columns: 1fr; /* Stack values on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+  .about-section h2 {
+    font-size: 1.6em;
+  }
+  .about-section h3 {
+    font-size: 1.2em;
+  }
+  .about-section p,
+  .about-section ul li {
+    font-size: 0.95em;
+  }
+}
