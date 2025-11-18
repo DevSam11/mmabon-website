@@ -78,7 +78,7 @@
 
 /* --- Specific Color Styling for Each Button --- */
 .whatsapp-order-btn {
-    background-color: #CC3F3F; /* WhatsApp green */
+    background-color: #55590b; /* WhatsApp green */
     color: #fff; /* White text */
 }
 
@@ -93,8 +93,8 @@
 }
 
 .customize-outfit-btn:hover {
-    background-color: #CC3F3F; /* Darker yellow on hover */
-    border-color: #CC3F3F; /* Darker border on hover */
+    background-color: #55590b; /* Darker yellow on hover */
+    border-color: white; /* Darker border on hover */
     color: white
   }
 

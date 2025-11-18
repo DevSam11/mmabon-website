@@ -34,7 +34,7 @@
     width: calc(100% - 20px); /* Full width minus padding */
     margin: 10px; /* Space around the button inside the item */
     padding: 12px 15px;
-    background-color: #E24949; /* Brand red color */
+    background-color: #55590b; /* Brand red color */
     color: white;
     border: none;
     border-radius: 5px;
@@ -47,7 +47,7 @@
   }
   
   .chat-order-btn:hover {
-    background-color: #CC3F3F;
+    background-color: #55590b;
     transform: translateY(-1px);
   }
   

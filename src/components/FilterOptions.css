@@ -46,9 +46,9 @@
 
 .filter-item:hover,
 .filter-item.active { /* Apply .active class for selected dropdown category item if needed */
-  background-color: #e6b800; /* MMABON's brand color */
+  background-color: #55590b; /* MMABON's brand color */
   color: #ffffff;
-  border-color: #e6b800;
+  border-color: #55590b;
   transform: translateY(-2px); /* Slight lift on hover */
 }
 
@@ -112,7 +112,7 @@
 
 .dropdown-content li:hover {
   background-color: #f0f0f0;
-  color: #007bff;
+  color: #d7b961;
 }
 
 /* Media Queries for Responsiveness */

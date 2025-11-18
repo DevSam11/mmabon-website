@@ -1,94 +1,161 @@
 /* src/pages/DesignerPage.css */
 
-.designer-page-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 60vh; /* Adjust as needed */
-  text-align: center;
-  padding: 20px;
-  background-color: #f8f8f8;
+/* --- Brand Color Definitions --- */
+:root {
+    --brand-primary: #55590b;      /* Dark Olive Green (Action/Highlights) */
+    --brand-secondary: #d7b961;    /* Gold/Khaki (Accent/Text) */
+    --brand-dark-grey: #333333;    /* Used for dark backgrounds/text instead of black */
+    --text-light: #fff;            /* White text */
+    --background-dark: #222222;    /* Very dark grey for main page background */
+    --container-bg: #333333;       /* Dark grey for the form container */
+    --input-bg: #444444;           /* Slightly lighter dark grey for inputs */
+    --border-grey: #666666;
+    --error-bg: #cc3333;           /* Red for error messages */
 }
 
-.coming-soon-title {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 20px;
+/* --- Main Wrapper and Container --- */
+
+.designer-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; 
+    background-color: var(--background-dark); 
+    color: var(--text-light); 
+    font-family: sans-serif;
 }
 
-.coming-soon-message {
-  font-size: 1.2rem;
-  color: #666;
-  max-width: 700px; /* Slightly wider for more text */
-  line-height: 1.6;
-  margin-bottom: 15px; /* Spacing below paragraphs */
+.designer-form-container {
+    width: 100%;
+    max-width: 48rem; 
+    background-color: var(--container-bg); 
+    padding: 2rem; 
+    border-radius: 1rem; 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4); 
 }
 
-.coming-soon-features {
-  list-style: none; /* Remove default bullet points */
-  padding: 0;
-  margin: 0 0 25px 0; /* Margin above and below the list */
-  text-align: left; /* Align list items to the left */
-  max-width: 600px;
-  color: #555;
-  font-size: 1.1rem;
+/* --- Header Section --- */
+
+.designer-header {
+    text-align: center;
+    margin-bottom: 2rem; 
 }
 
-.coming-soon-features li {
-  margin-bottom: 8px;
-  padding-left: 25px; /* Space for custom bullet */
-  position: relative;
+.designer-header h1 {
+    font-size: 2.25rem; 
+    line-height: 1;
+    font-weight: 700; 
 }
 
-.coming-soon-features li::before {
-  content: '✨'; /* Custom bullet point */
-  position: absolute;
-  left: 0;
-  color: #e6b800; /* MMABON yellow */
+@media (min-width: 768px) {
+    .designer-header h1 {
+        font-size: 3rem; 
+    }
 }
 
-.whatsapp-contact-button {
-  background-color: #25D366; /* WhatsApp green */
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 20px;
-  display: inline-flex; /* Align icon if added */
-  align-items: center;
-  gap: 8px; /* Space between text and potential icon */
+.designer-header p {
+    color: #aaaaaa; 
+    margin-top: 0.5rem;
 }
 
-.whatsapp-contact-button:hover {
-  background-color: #1DA851;
-  transform: translateY(-2px);
+/* --- Form and Input Styles --- */
+
+.designer-form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+}
+
+.designer-input-group {
+    margin-bottom: 0.5rem; 
+}
+
+.designer-label {
+    display: block;
+    font-size: 0.875rem; 
+    font-weight: 500; 
+    color: #cccccc; 
+    margin-bottom: 0.25rem;
+}
+
+.designer-input,
+.designer-select,
+.designer-textarea {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem; 
+    border-radius: 0.75rem; 
+    border: 1px solid var(--border-grey); 
+    background-color: var(--input-bg); 
+    color: var(--text-light); 
+    transition: all 0.2s;
+    outline: none;
+}
+
+.designer-input::placeholder,
+.designer-textarea::placeholder {
+    color: #999999; 
+}
+
+.designer-input:focus,
+.designer-select:focus,
+.designer-textarea:focus {
+    /* Focus ring using Gold/Khaki accent color */
+    border-color: var(--brand-secondary); 
+    box-shadow: 0 0 0 2px var(--brand-secondary); 
+}
+
+.designer-select option {
+    background-color: var(--input-bg);
+}
+
+/* --- Message Display Area --- */
+
+.designer-message {
+    padding: 1rem; 
+    border-radius: 0.75rem; 
+    font-size: 0.875rem; 
+    color: var(--text-light);
+    text-align: center;
+}
+
+.designer-message.error {
+    background-color: var(--error-bg); 
+}
+.designer-message.success {
+    background-color: var(--brand-primary); 
 }
 
 
-/* Basic responsiveness */
-@media (max-width: 768px) {
-  .coming-soon-title {
-    font-size: 2rem;
-  }
-  .coming-soon-message,
-  .coming-soon-features,
-  .whatsapp-contact-button {
-    font-size: 1rem;
-  }
+/* --- Action Button (Chat to Place Order) --- */
+
+.designer-action-button {
+    width: 100%;
+    padding: 1rem; 
+    
+    /* Button uses Dark Olive Green background */
+    background-color: var(--brand-primary); 
+    
+    color: var(--text-light);
+    font-weight: 700; 
+    border-radius: 0.75rem; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    
+    transform: scale(1);
 }
 
-@media (max-width: 480px) {
-  .coming-soon-title {
-    font-size: 1.8rem;
-  }
-  .coming-soon-message,
-  .coming-soon-features,
-  .whatsapp-contact-button {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
+.designer-action-button:hover {
+    /* Slightly darker green on hover */
+    background-color: #404308; 
+    transform: scale(1.01); 
+}
+
+.designer-action-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(85, 89, 11, 0.5); 
 }

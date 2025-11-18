@@ -1,37 +1,92 @@
 /* src/components/Header.css */
 
+/* --- Brand Color Definitions (Inferred from your styles) --- */
+:root {
+    --brand-primary: #55590b;      /* Dark Olive Green (Header background/Shop hover) */
+    --brand-secondary: #d7b961;    /* Gold/Khaki (Nav link color/Shop text color) */
+    --text-dark: #333;             /* Dark text for general use */
+    --background-white: #ffffff;
+}
+
 /* General Header Styles */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 20px; /* Reduced vertical padding for a sleeker look */
+    background-color: var(--brand-primary); /* Using the brand primary color */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100; /* Ensure header stays on top */
+    z-index: 100;
 }
 
 .header-left-section {
     display: flex;
     align-items: center;
-    /* gap: 10px; Removed, will handle with padding or margin for logo */
 }
 
-/* Header Logo Styles - NEW OR UPDATED */
+/* Header Logo Styles */
 .header-logo-link {
-    display: flex; /* Ensures the link itself behaves as a flex item */
-    align-items: center; /* Vertically centers the logo within its link */
-    padding-left: 10px; /* Add some space if hamburger is present */
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
 }
 
 .header-logo {
-    height: 40px; /* Set a fixed height for the logo */
-    width: auto;   /* Maintain the aspect ratio */
-    display: block; /* Ensures no extra space below the image */
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+
+/* --- Right Section Container (NEW: Added to contain Shop Button and Icons) --- */
+.header-right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between the SHOP button and the Cart icon */
+    flex-shrink: 0; 
+}
+
+
+/* 💥 SHOP Button Styling (The far right element) 💥 */
+/* Assuming the link uses the class .header-shop-button */
+.header-shop-button {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9em;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    white-space: nowrap;
+
+    /* Requested White Background */
+    background-color: var(--background-white); 
+    color: var(--brand-primary); /* Dark Olive Green Text */
+    border: 2px solid var(--brand-secondary); /* Gold/Khaki Border */
+}
+
+.header-shop-button:hover {
+    background-color: var(--brand-secondary); /* Hover with Gold/Khaki background */
+    color: var(--brand-primary); /* Dark Olive Green Text */
+}
+
+/* Icon Link Styles (Cart/Profile) */
+.header-icon-link {
+    display: flex;
+    color: var(--brand-secondary); /* Icons use Gold/Khaki */
+    transition: color 0.3s;
+}
+
+.header-icon-link:hover {
+    color: var(--background-white); /* White on hover */
+}
+
+.header-icon-link svg {
+    width: 24px;
+    height: 24px;
 }
 
 
@@ -40,48 +95,48 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Display horizontally for desktop */
+    display: flex;
     align-items: center;
 }
 
 .header-nav-item {
-    position: relative; /* Needed for dropdown positioning */
+    position: relative;
     margin: 0 15px;
-    height: 100%; /* Ensure hover area covers item height */
+    height: 100%;
     display: flex;
     align-items: center;
 }
 
 .header-nav-link {
     text-decoration: none;
-    color: #333;
+    color: var(--brand-secondary); /* Gold/Khaki */
     font-size: 1em;
     font-weight: bold;
     text-transform: uppercase;
-    padding: 20px 0; /* Vertical padding to give clickable area */
-    display: block; /* Make the link take full padding */
-    white-space: nowrap; /* Prevent text wrapping */
+    padding: 10px 0; /* Adjusted padding to match new header height */
+    display: block;
+    white-space: nowrap;
 }
 
 .header-nav-link:hover {
-    color: #007bff;
+    color: var(--background-white);
 }
 
 /* Dropdown Container */
 .header-dropdown {
     position: absolute;
-    top: 100%; /* Position below the parent nav item */
-    left: 50%; /* Center dropdown horizontally */
-    transform: translateX(-50%); /* Adjust for perfect centering */
-    background-color: #fff;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--background-white);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 5px;
-    min-width: 200px; /* Adjust as needed */
-    z-index: 1000; /* Ensure it's above other content */
+    min-width: 200px;
+    z-index: 1000;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    padding: 10px 0; /* Padding inside dropdown */
+    padding: 10px 0;
 }
 
 /* Show dropdown on hover of the parent item */
@@ -98,31 +153,31 @@
 }
 
 .header-dropdown-item {
-    padding: 8px 15px; /* Padding for individual dropdown links */
+    padding: 8px 15px;
 }
 
 .header-dropdown-link {
     text-decoration: none;
-    color: #555;
+    color: var(--text-dark);
     font-size: 0.95em;
     display: block;
     white-space: nowrap;
-    text-transform: uppercase; /* Match UI */
+    text-transform: uppercase;
 }
 
 .header-dropdown-link:hover {
-    color: #007bff;
+    color: var(--brand-primary); /* Dark Olive Green on hover */
     background-color: #f9f9f9;
 }
 
 /* Hamburger menu button - hidden by default on desktop */
 .hamburger-button {
-    display: none; /* Hide on desktop */
+    display: none;
     font-size: 2em;
     background: none;
     border: none;
     cursor: pointer;
-    color: #333;
+    color: var(--brand-secondary); /* Gold/Khaki */
     padding: 5px 10px;
 }
 
@@ -136,25 +191,31 @@
 
     /* Show hamburger button on mobile */
     .hamburger-button {
-        display: block; /* Show hamburger */
+        display: block;
     }
 
     /* Adjust logo positioning for mobile if needed */
-     .header-left-section {
+    .header-left-section {
         display: flex;
         align-items: center;
-        justify-content: space-between; /* pushes items to edges */
-        width: 100%;
-        padding: 0 20px; /* add some padding from screen edges */
+        /* Remove justify-content: space-between here, let the main .header handle spacing */
+        width: auto; 
+        padding: 0 0; /* Remove padding from inside the section */
     }
-     .header-logo-link {
-        display: flex;
-        align-items: center;
+    
+    /* Make the entire header space-between the left section and the right section */
+    .header {
+        justify-content: space-between;
     }
 
- .header-logo {
+    .header-logo {
         max-width: 150px;
         height: auto;
+    }
+    
+    /* Ensure the logo link has the necessary space */
+    .header-logo-link {
+        padding-left: 10px;
     }
 
 }

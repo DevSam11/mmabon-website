@@ -36,8 +36,8 @@
 }
 
 .category-item:hover {
-  border-color: #E24949; /* Highlight border on hover */
-  color: #E24949; /* Text color change on hover */
+  border-color: #55590b; /* Highlight border on hover */
+  color: #55590b; /* Text color change on hover */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* More prominent shadow on hover */
   transform: translateY(-2px); /* Slight lift effect */
 }

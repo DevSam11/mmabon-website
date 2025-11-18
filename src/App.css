@@ -34,6 +34,8 @@ body {
     flex-direction: column;
     width: 100%; /* Important for initial layout */
     min-height: 100vh; /* Ensure it takes full viewport height */
+    min-width: 100vw;
+    flex-shrink: 0;
 }
 
 /* Class applied when side navigation is open (on mobile) */
@@ -46,3 +48,4 @@ body {
   flex-grow: 1; /* Allows main content to expand and push footer down */
   padding-bottom: 50px; /* Example padding to prevent content touching footer */
 }
+

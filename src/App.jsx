@@ -14,21 +14,230 @@ import Footer from './components/Footer';
 import SideNavigation from './components/SideNavigation'; // Import SideNavigation
 
 // --- General Page Components ---
+import ECommercePage from './pages/ECommercePage';
 import DesignerPage from './pages/DesignerPage';
 import AlumniPage from './pages/AlumniPage';
 import HowToOrderPage from './pages/HowToOrderPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ContactUsPage from './pages/ContactUsPage';
-import CategoryProductsPage from './pages/CategoryProductsPage'; // Reusable component for category pages
+import CategoryProductsPage from './pages/CategoryProductsPage';
+// Reusable component for category pages
+import CheckoutPage from './components/CheckoutPage';
 
 import './App.css'; // IMPORTANT: Make sure this line is here!
 
 
 // ALL_PRODUCT_DATA (moved outside App component for cleaner access)
 const imageBaseUrl = '/designer_assets/'; // Ensure this path is correct for your project
+// src/App.jsx
+
+
+
+
+// 💥 NEW: Separate Product Data for the E-Commerce page 💥
+// src/App.jsx
+
+ 
+// src/App.jsx
+
+const ECOMMERCE_PRODUCTS = [
+  // --- Block 1 ---
+  { id: 101, name: '20th Memorial Tshirt for Late Father (Organza)', price: 15000, size: 'M', color: 'Black', 
+    category: 'Tshirt', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/womanorganzashortsleevetsh-550x550.jpg` }, 
+  { id: 102, name: 'Vintage Logo T-shirt (Black)', price: 15000, size: 'L', color: 'White', 
+    category: 'Tshirt', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/scaled_variant--2_transformed-550x550.jpg` }, 
+  { id: 103, name: 'Slim Fit V Neck TShirt (Navy)', price: 10000, size: 'S', color: 'Navy', 
+    category: 'Tshirt', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/fittedvnecktshirt1-550x550.jpg` }, 
+  { id: 104, name: 'Tulle Sleeve T-shirt (Pink)', price: 15000, size: 'M', color: 'Pink', 
+    category: 'Tshirt', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/fittedvnecktshirt3-Copy-550x550.jpg` }, 
+    
+  // --- Block 2 ---
+  { id: 105, name: '20th Memorial Tshirt for Late Father (V Neck)', price: 15000, size: 'M', color: 'Black', 
+    category: 'Tshirt', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/fittedvnecktshirt5-(1)-550x550.jpg` }, 
+  { id: 106, name: 'Vintage Logo T-shirt (Turquoise)', price: 15000, size: 'L', color: 'White', 
+    category: 'Tshirt', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/fittedvneckturquoise2-Copy-(1)-550x550.jpg` }, 
+  { id: 107, name: 'Slim Fit V Neck TShirt (Varsity Blue)', price: 10000, size: 'S', color: 'Navy', 
+    category: 'Tshirt', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/mmabonvarsitytshirtroyalblue-(1)-550x550.jpg` }, 
+  { id: 108, name: '40th Birthday Tulle Sleeve Tshirt', price: 15000, size: 'M', color: 'Pink', 
+    category: 'Tshirt', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/scaled_40th-Birthday-Net-Tulle-Sleeves-Rhinestoned-Tshirt_transformed-1-550x550.jpg` }, 
+
+  // --- Block 3 ---
+  { id: 109, name: '40th Birthday Vintage Tshirt', price: 15000, size: 'M', color: 'Black', 
+    category: 'Tshirt', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/scaled_40th-Birthday-Tshirt_transformed-550x550.jpg` }, 
+  { id: 110, name: 'Slategrey Uniform T-shirt', price: 15000, size: 'L', color: 'White', 
+    category: 'Tshirt', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/slategreyun-550x550.jpg` }, 
+  { id: 111, name: 'Vintage 40 T-shirt (Scaled)', price: 10000, size: 'S', color: 'Navy', 
+    category: 'Tshirt', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/scaled_Vintage-40-Tshirt_transformed-2-550x550.jpg` }, 
+  { id: 112, name: 'Rhinestoned Tulle Sleeve Tshirt', price: 15000, size: 'M', color: 'Pink', 
+    category: 'Tshirt', // <<-- ADDED
+    // This image path appears twice above, using it for ID 112 to fill the slot.
+    image: `${imageBaseUrl}e-commerce/scaled_40th-Birthday-Net-Tulle-Sleeves-Rhinestoned-Tshirt_transformed-1-550x550.jpg` }, 
+
+
+     // --- Block 4 Loungewear---
+  { id: 113, name: 'CROPPEDJOGGERSSET1', price: 15000, size: 'M', color: 'Black', 
+    category: 'Loungewear', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/Loungewear/CROPPEDJOGGERSSET1--550x550.jpg` },
+
+      { id: 114, name: 'Daziessweatwear', price: 15000, size: 'M', color: 'Black', 
+    category: 'Loungewear', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/Loungewear/Daziessweatwear--550x550.jpg` },
+
+      { id: 115, name: 'croppedruchedbandswea', price: 15000, size: 'M', color: 'Black', 
+    category: 'Loungewear', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/Loungewear/croppedruchedbandswea-550x550.jpg` },
+
+      { id: 116, name: 'jeeseyhoo', price: 15000, size: 'M', color: 'Black', 
+    category: 'Loungewear', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/Loungewear/jeeseyhoo-550x550.jpg` },
+
+      { id: 117, name: 'navybluehoodi', price: 15000, size: 'M', color: 'Black', 
+    category: 'Loungewear', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/Loungewear/navybluehoodi-550x550.jpg` },
+
+      { id: 118, name: 'Loungewear', price: 15000, size: 'M', color: 'Black', 
+    category: 'Loungewear', // <<-- ADDED
+    image: `${imageBaseUrl}e-commerce/Loungewear/scaled_180509_Mmabon-Shoot4976_transformed-550x550.jpg` },
+
+      { id: 119, name: 'Hoodie', price: 15000, size: 'M', color: 'Black', 
+    category: 'Loungewear', 
+    image: `${imageBaseUrl}e-commerce/Loungewear/scaled_AGS-Branded-Hoodie-and-Joggers-set_transformed-550x550.jpg` },
+
+    { id: 120, name: 'Hoodie', price: 15000, size: 'M', color: 'Black', 
+    category: 'Loungewear', 
+    image: `${imageBaseUrl}e-commerce/Loungewear/scaled_ankara-1_transformed-550x550.png` },
+
+     { id: 121, name: 'Sweat-Shirt', price: 15000, size: 'M', color: 'Black', 
+    category: 'Loungewear', 
+    image: `${imageBaseUrl}e-commerce/Loungewear/scaled_Sweat-Shirt---Short-2_transformed-550x550.png` },
+
+     { id: 122, name: 'Hoodie', price: 15000, size: 'M', color: 'Black', 
+    category: 'Loungewear', 
+    image: `${imageBaseUrl}e-commerce/Loungewear/scaled_Unisex-Sweatshirt---Joggers-Set-1_transformed-550x550.jpg` },
+
+    { id: 123, name: 'Unisex-Hoodie---Joggers-Set', price: 15000, size: 'M', color: 'Black', 
+    category: 'Loungewear', 
+    image: `${imageBaseUrl}e-commerce/Loungewear/Unisex-Hoodie---Joggers-Set-550x550.jpg` },
+
+      { id: 124, name: 'Hoodie---Joggers-Set', price: 15000, size: 'M', color: 'Black', 
+    category: 'Loungewear', 
+    image: `${imageBaseUrl}e-commerce/Loungewear/Varaity-Net-Sleeve-Hoodie---N12500-550x550.jpg` },
+
+
+    // --- Block 5 Loungewear---
+  { id: 125, name: 'blacksle', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/blacksle-550x550.jpg` },
+
+     { id: 126, name: 'Dress', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/dress-550x550.jpg` },
+
+      { id: 127, name: 'Dress', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/DRESSES.1png--(1)-550x550.jpg` },
+
+     { id: 128, name: 'Dress', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/dsc-(2)-550x550.jpg` },
+
+     { id: 129, name: 'Dress', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/DSC--(2)-550x550.jpg` },
+
+      { id: 130, name: 'Dress', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/DSC_8658-550x550.jpg` },
+
+    { id: 131, name: 'Dress', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/EXXA-550x550.jpg` },
+
+    { id: 132, name: 'Dress', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/greybackhemgatherts-550x550.jpg` },
+
+     { id: 133, name: 'Group model varsity', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/groupmodelvarsit-550x550.jpg` },
+   
+     { id: 134, name: 'Jessey', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/jessyadir-550x550.jpg` },
+
+     { id: 135, name: 'Royal blue sleeve', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/royalbluesleeve-(1)-550x550.jpg` },
+
+
+    { id: 137, name: 'Adire-diamond-t-shirt', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/scaled_Adire-diamond-t-shirt-1_transformed-550x550.png` },
+
+      { id: 138, name: 'Dress', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/scaled_dsc_transformed-550x550.png` },
+
+          { id: 139, name: 'Dress', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/slantmmidishir-550x550.jpg` },
+
+     { id: 140, name: 'Dress', price: 15000, size: 'M', color: 'Black', 
+    category: 'Dresses', 
+    image: `${imageBaseUrl}e-commerce/Dresses/Tik-550x550.jpg` },
+
+
+       // --- Block 5 Loungewear---
+  { id: 141, name: 'Uniform', price: 15000, size: 'M', color: 'Black', 
+    category: 'Uniform', 
+    image: `${imageBaseUrl}e-commerce/scaled_180509_Mmabon-Shoot4976_transformed-550x550.jpg` },
+
+     { id: 142, name: 'Ankara sleeve', price: 15000, size: 'M', color: 'Black', 
+    category: 'Uniform', 
+    image: `${imageBaseUrl}e-commerce/ankarareglansleevetsh-(1)-550x550.jpg` },
+
+       // --- Block 6 Accessories---
+  { id: 143, name: 'Tote bag', price: 15000, size: 'M', color: 'Black', 
+    category: 'Accessories', 
+    image: `${imageBaseUrl}e-commerce/Accessories/20231120_195232-550x550.jpg` },
+
+     { id: 144, name: 'Power bank', price: 15000, size: 'M', color: 'Black', 
+    category: 'Accessories', 
+    image: `${imageBaseUrl}e-commerce/Accessories/scaled_power-bank-2_transformed-550x550.png` },
+
+     { id: 145, name: 'bag', price: 15000, size: 'M', color: 'Black', 
+    category: 'Accessories', 
+    image: `${imageBaseUrl}e-commerce/Accessories/scaled_mug-2_transformed-550x550.png` },
+
+       { id: 146, name: 'bottles', price: 15000, size: 'M', color: 'Black', 
+    category: 'Accessories', 
+    image: `${imageBaseUrl}e-commerce/Accessories/scaled_E-1_transformed-550x550.jpg` },
+
+     { id: 147, name: 'Throw pillow', price: 15000, size: 'M', color: 'Black', 
+    category: 'Accessories', 
+    image: `${imageBaseUrl}e-commerce/Accessories/scaled_bottles-2_transformed-550x550.png` }
+   
+
+];
+
+
+
+
+
 
 const ALL_PRODUCT_DATA = {
-    // --- Shop by Occasion Categories (Matching UI: Untitled.pngllll.png) ---
+    // --- Shop by Occasion   ---
     'Family Milestones': [
         { id: 1, imageUrl: `${imageBaseUrl}family_milestones/15th Anniversary Family Tshirts 3.jpg`, altText: 'Family Event Outfit 1', category: 'Family Milestones' },
         { id: 2, imageUrl: `${imageBaseUrl}family_milestones/Custom Family Polos Tshirts Wedding Anniversary .jpg`, altText: 'Family Event Outfit 2', category: 'Family Milestones' },
@@ -199,7 +408,7 @@ function App() {
         if (category !== activeGalleryCategory) {
             setActiveGalleryCategory(category);
         }
-        // This line is redundant if activeGalleryCategory triggers the useEffect, but harmless
+        // This line is redundant
         setCurrentGalleryProducts(ALL_PRODUCT_DATA[category] || []);
     }, [activeGalleryCategory]);
 
@@ -228,6 +437,7 @@ function App() {
     const toggleSideNav = useCallback(() => {
         setIsSideNavOpen(prev => !prev);
     }, []);
+
 
     // Determine if it's a mobile view to potentially adjust main content layout
     const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
@@ -283,7 +493,7 @@ function App() {
                                     <SectionHeader
                                         title={
                                             ['Family Milestones', 'Group Events', 'Corporate Brand', 'Personal Wardrobe'].includes(activeGalleryCategory)
-                                                ? 'Shop by Occasion'
+                                                ? 'Shop by Occasio/n'
                                                 : 'Ready to Wear'
                                         }
                                         subtitle={getSubtitle()}
@@ -298,8 +508,12 @@ function App() {
 
                         {/* Dynamic Routes for Categories using CategoryProductsPage to render ImageGallery */}
                         {/* NOTE: subCategory in URL (e.g., "family-milestones") must match keys in ALL_PRODUCT_DATA
-                            after being normalized by CategoryProductsPage's internal logic. */}
-                        <Route
+                            after bei}
+                
+                       
+
+                        {/* Other Static Routes - Wrapped in <main> for consistent styling */}
+                         <Route
                             path="/shop/:subCategory"
                             element={<CategoryProductsPage allProductData={ALL_PRODUCT_DATA} onChatOrder={handleChatOrder} />}
                         />
@@ -307,17 +521,22 @@ function App() {
                             path="/shop" // For the main /shop page without a specific subCategory
                             element={<CategoryProductsPage allProductData={ALL_PRODUCT_DATA} onChatOrder={handleChatOrder} defaultCategory="all-shop-items" />}
                         />
+                        <Route path="/checkout" element={<CheckoutPage />} />
+
+                        
 
                         <Route
                             path="/ready-to-wear/:subCategory"
                             element={<CategoryProductsPage allProductData={ALL_PRODUCT_DATA} onChatOrder={handleChatOrder} />}
                         />
+
+                        
+
                         <Route
                             path="/ready-to-wear" // For the main /ready-to-wear page without a specific subCategory
                             element={<CategoryProductsPage allProductData={ALL_PRODUCT_DATA} onChatOrder={handleChatOrder} defaultCategory="all-ready-to-wear-items" />}
                         />
 
-                        {/* Other Static Routes - Wrapped in <main> for consistent styling */}
                         <Route path="/customize-outfit" element={
                             <main className="main-content">
                                 <SectionHeader title="Customize Your Outfit" subtitle="Design your unique style" />
@@ -332,6 +551,15 @@ function App() {
                         <Route path="/how-to-order" element={<HowToOrderPage />} />
                         {/* CONTACT US PAGE */}
                         <Route path="/contact" element={<ContactUsPage />} />
+                        <Route 
+    path="ECommerce" 
+    element={
+        <ECommercePage 
+            // 💥 Pass the new product data here 💥
+            initialProducts={ECOMMERCE_PRODUCTS} 
+        />
+    } 
+/>
                         {/* ALUMNI PAGE */}
                         <Route path="/alumni" element={
                             <AlumniPage
@@ -341,7 +569,7 @@ function App() {
                         } />
                         {/* DESIGNER PAGE */}
                         <Route path="/designer" element={<DesignerPage />} />
-
+                     
                     </Routes>
                     {/* GLOBAL FOOTER - Appears on all pages */}
                     <Footer />

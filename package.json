@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "firebase": "^12.5.0",
     "konva": "^9.3.6",
+    "lucide-react": "^0.552.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-konva": "^18.2.10",
